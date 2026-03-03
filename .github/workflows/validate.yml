@@ -1,0 +1,73 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - 'companies/**'
+      - 'schema/**'
+      - 'scripts/**'
+      - 'package.json'
+
+jobs:
+  validate:
+    name: Validate entries & index
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate all entries
+        run: |
+          set -o pipefail
+          pnpm validate 2>&1 | tee /tmp/validate.log
+
+      - name: Summarize validation soft-fails
+        if: always()
+        run: |
+          if [ ! -f /tmp/validate.log ]; then
+            echo "::warning title=Validation Summary::No validation log found"
+            exit 0
+          fi
+
+          summary_line="$(grep 'VALIDATION_SUMMARY' /tmp/validate.log | tail -n 1 || true)"
+          if [ -z "$summary_line" ]; then
+            echo "::warning title=Validation Summary::No summary line found in validation output"
+            exit 0
+          fi
+
+          hard_errors="$(echo "$summary_line" | sed -E 's/.*hard_errors=([0-9]+).*/\1/')"
+          soft_warnings="$(echo "$summary_line" | sed -E 's/.*soft_warnings=([0-9]+).*/\1/')"
+          total_entries="$(echo "$summary_line" | sed -E 's/.*total_entries=([0-9]+).*/\1/')"
+
+          if [ "$soft_warnings" -gt 0 ]; then
+            echo "::warning title=Validation Summary::Soft warnings: $soft_warnings | Hard errors: $hard_errors | Total entries: $total_entries"
+          else
+            echo "::notice title=Validation Summary::Soft warnings: $soft_warnings | Hard errors: $hard_errors | Total entries: $total_entries"
+          fi
+
+      - name: Rebuild index
+        run: pnpm build-index
+
+      - name: Check index.json is up to date
+        run: |
+          if ! git diff --exit-code companies/index.json; then
+            echo ""
+            echo "companies/index.json is out of date."
+            echo "Run 'pnpm build-index' locally and commit the result."
+            exit 1
+          fi

@@ -1,0 +1,298 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/africa-ats-directory/schema/company-entry",
+  "title": "Company ATS Entry v1",
+  "description": "A company entry mapping a company to an ATS board endpoint with evidence and validation metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "company",
+    "ats",
+    "country",
+    "careers_url",
+    "board_url",
+    "platform_metadata",
+    "verification",
+    "evidence"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9-]+-[a-z]{2}$"
+    },
+    "company": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ats": {
+      "type": "string",
+      "enum": [
+        "greenhouse",
+        "lever",
+        "ashby",
+        "smartrecruiters",
+        "workable",
+        "bamboohr",
+        "breezyhr",
+        "recruitee"
+      ]
+    },
+    "country": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "city": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string",
+      "enum": [
+        "fintech",
+        "healthtech",
+        "edtech",
+        "ecommerce",
+        "logistics",
+        "ngo",
+        "climate",
+        "agritech",
+        "enterprise-software",
+        "other"
+      ]
+    },
+    "sector_raw": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["active", "inactive", "unknown", "watchlist"]
+    },
+    "careers_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "board_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "platform_metadata": {
+      "type": "object",
+      "minProperties": 1,
+      "maxProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "board_token": { "type": "string", "minLength": 1 },
+        "org_slug": { "type": "string", "minLength": 1 },
+        "account_slug": { "type": "string", "minLength": 1 },
+        "subdomain": { "type": "string", "minLength": 1 }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "confidence",
+        "first_seen_at",
+        "last_checked_at",
+        "last_status_code"
+      ],
+      "properties": {
+        "method": {
+          "type": "string",
+          "enum": ["auto-detected", "manual"]
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "first_seen_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_checked_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_status_code": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 599
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "detected_from_url",
+        "resolved_board_url",
+        "detection_signals"
+      ],
+      "properties": {
+        "detected_from_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "resolved_board_url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "detection_signals": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 1
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["submitted_by", "submitted_at"],
+      "properties": {
+        "submitted_by": {
+          "type": "string",
+          "minLength": 1
+        },
+        "submitted_at": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "greenhouse" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["board_token"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "lever" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["board_token"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "ashby" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["board_token"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "smartrecruiters" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["org_slug"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "workable" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["account_slug"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "bamboohr" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["subdomain"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "breezyhr" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["subdomain"]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "ats": { "const": "recruitee" }
+        },
+        "required": ["ats"]
+      },
+      "then": {
+        "properties": {
+          "platform_metadata": {
+            "type": "object",
+            "required": ["subdomain"]
+          }
+        }
+      }
+    }
+  ]
+}

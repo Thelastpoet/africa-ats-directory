@@ -1,0 +1,104 @@
+[
+  {
+    "id": "koko-networks-ke",
+    "company": "KOKO Networks",
+    "ats": "lever",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "climate",
+    "sector_raw": "cleantech",
+    "status": "active",
+    "careers_url": "https://www.kokonetworks.com/careers/",
+    "board_url": "https://jobs.lever.co/kokonetworks",
+    "platform_metadata": {
+      "board_token": "kokonetworks"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.kokonetworks.com/careers/",
+      "resolved_board_url": "https://jobs.lever.co/kokonetworks",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "tala-ke",
+    "company": "Tala",
+    "ats": "lever",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "active",
+    "careers_url": "https://tala.co/careers/",
+    "board_url": "https://jobs.lever.co/tala",
+    "platform_metadata": {
+      "board_token": "tala"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://tala.co/careers/",
+      "resolved_board_url": "https://jobs.lever.co/tala",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "binance-ng",
+    "company": "Binance",
+    "ats": "lever",
+    "country": "NG",
+    "city": "Lagos",
+    "sector": "other",
+    "sector_raw": "crypto",
+    "status": "watchlist",
+    "careers_url": "https://www.binance.com/en/careers",
+    "board_url": "https://jobs.lever.co/binance",
+    "platform_metadata": {
+      "board_token": "binance"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.binance.com/en/careers",
+      "resolved_board_url": "https://jobs.lever.co/binance",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  }
+]

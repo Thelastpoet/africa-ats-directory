@@ -1,0 +1,138 @@
+[
+  {
+    "id": "visa-ke",
+    "company": "Visa",
+    "ats": "smartrecruiters",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "active",
+    "careers_url": "https://www.visa.com/en_KE/about-visa/careers.html",
+    "board_url": "https://jobs.smartrecruiters.com/visa",
+    "platform_metadata": {
+      "org_slug": "visa"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.visa.com/en_KE/about-visa/careers.html",
+      "resolved_board_url": "https://jobs.smartrecruiters.com/visa",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "watu-credit-ke",
+    "company": "Watu Credit",
+    "ats": "smartrecruiters",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "active",
+    "careers_url": "https://www.watucredit.com/careers/",
+    "board_url": "https://jobs.smartrecruiters.com/watucredit",
+    "platform_metadata": {
+      "org_slug": "watucredit"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.watucredit.com/careers/",
+      "resolved_board_url": "https://jobs.smartrecruiters.com/watucredit",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "amref-health-africa-ke",
+    "company": "Amref Health Africa",
+    "ats": "smartrecruiters",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "healthtech",
+    "sector_raw": "healthtech",
+    "status": "active",
+    "careers_url": "https://amref.org/jobs/",
+    "board_url": "https://jobs.smartrecruiters.com/amrefhealthafrica",
+    "platform_metadata": {
+      "org_slug": "amrefhealthafrica"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://amref.org/jobs/",
+      "resolved_board_url": "https://jobs.smartrecruiters.com/amrefhealthafrica",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "digital-divide-data-ke",
+    "company": "Digital Divide Data",
+    "ats": "smartrecruiters",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "other",
+    "sector_raw": "impact-tech",
+    "status": "active",
+    "careers_url": "https://www.digitaldividedata.org/careers/",
+    "board_url": "https://jobs.smartrecruiters.com/digitaldividedata",
+    "platform_metadata": {
+      "org_slug": "digitaldividedata"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.digitaldividedata.org/careers/",
+      "resolved_board_url": "https://jobs.smartrecruiters.com/digitaldividedata",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "id": "inkomoko-ke",
+    "company": "Inkomoko",
+    "ats": "workable",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "ngo",
+    "sector_raw": "ngo",
+    "status": "active",
+    "careers_url": "https://www.inkomoko.com/careers/",
+    "board_url": "https://apply.workable.com/inkomoko",
+    "platform_metadata": {
+      "account_slug": "inkomoko"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.inkomoko.com/careers/",
+      "resolved_board_url": "https://apply.workable.com/inkomoko",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "kwara-ng",
+    "company": "Kwara",
+    "ats": "workable",
+    "country": "NG",
+    "city": "Lagos",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "watchlist",
+    "careers_url": "https://www.kwara.com/careers/",
+    "board_url": "https://apply.workable.com/kwara",
+    "platform_metadata": {
+      "account_slug": "kwara"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.kwara.com/careers/",
+      "resolved_board_url": "https://apply.workable.com/kwara",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "flare-ke",
+    "company": "Flare",
+    "ats": "workable",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "healthtech",
+    "sector_raw": "healthtech",
+    "status": "active",
+    "careers_url": "https://www.getflare.com/careers/",
+    "board_url": "https://apply.workable.com/flare",
+    "platform_metadata": {
+      "account_slug": "flare"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.getflare.com/careers/",
+      "resolved_board_url": "https://apply.workable.com/flare",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "welcome-tomorrow-ke",
+    "company": "Welcome Tomorrow",
+    "ats": "workable",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "active",
+    "careers_url": "https://www.welcometomorrow.org/careers/",
+    "board_url": "https://apply.workable.com/welcometomorrow",
+    "platform_metadata": {
+      "account_slug": "welcometomorrow"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.welcometomorrow.org/careers/",
+      "resolved_board_url": "https://apply.workable.com/welcometomorrow",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "kentro-ke",
+    "company": "Kentro",
+    "ats": "workable",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "enterprise-software",
+    "sector_raw": "tech",
+    "status": "active",
+    "careers_url": "https://kentro.io/careers/",
+    "board_url": "https://apply.workable.com/kentro",
+    "platform_metadata": {
+      "account_slug": "kentro"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://kentro.io/careers/",
+      "resolved_board_url": "https://apply.workable.com/kentro",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  }
+]

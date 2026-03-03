@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+set -eu
+
+echo "Running pre-commit checks..."
+
+pnpm test
+SKIP_BOARD_PROBES=1 pnpm validate
+pnpm build-index
+
+if ! git diff --exit-code companies/index.json >/dev/null 2>&1; then
+  echo "Error: companies/index.json is out of date."
+  echo "Run 'pnpm build-index' and commit the updated file."
+  exit 1
+fi
+
+echo "Pre-commit checks passed."

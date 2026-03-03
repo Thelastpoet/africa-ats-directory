@@ -1,0 +1,240 @@
+[
+  {
+    "id": "givedirectly-ke",
+    "company": "GiveDirectly",
+    "ats": "greenhouse",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "ngo",
+    "sector_raw": "ngo",
+    "status": "active",
+    "careers_url": "https://www.givedirectly.org/careers/",
+    "board_url": "https://boards.greenhouse.io/givedirectly",
+    "platform_metadata": {
+      "board_token": "givedirectly"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.givedirectly.org/careers/",
+      "resolved_board_url": "https://boards.greenhouse.io/givedirectly",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "girl-effect-ke",
+    "company": "Girl Effect",
+    "ats": "greenhouse",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "ngo",
+    "sector_raw": "ngo",
+    "status": "active",
+    "careers_url": "https://www.girleffect.org/careers/",
+    "board_url": "https://boards.greenhouse.io/girleffect",
+    "platform_metadata": {
+      "board_token": "girleffect"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.girleffect.org/careers/",
+      "resolved_board_url": "https://boards.greenhouse.io/girleffect",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "educate-ug",
+    "company": "Educate!",
+    "ats": "greenhouse",
+    "country": "UG",
+    "city": "Kampala",
+    "sector": "edtech",
+    "sector_raw": "edtech",
+    "status": "watchlist",
+    "careers_url": "https://www.educate-africa.com/careers/",
+    "board_url": "https://boards.greenhouse.io/educate",
+    "platform_metadata": {
+      "board_token": "educate"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.educate-africa.com/careers/",
+      "resolved_board_url": "https://boards.greenhouse.io/educate",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "paystack-ng",
+    "company": "Paystack",
+    "ats": "greenhouse",
+    "country": "NG",
+    "city": "Lagos",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "watchlist",
+    "careers_url": "https://paystack.com/careers",
+    "board_url": "https://boards.greenhouse.io/paystack",
+    "platform_metadata": {
+      "board_token": "paystack"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://paystack.com/careers",
+      "resolved_board_url": "https://boards.greenhouse.io/paystack",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "moniepoint-ng",
+    "company": "Moniepoint",
+    "ats": "greenhouse",
+    "country": "NG",
+    "city": "Lagos",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "watchlist",
+    "careers_url": "https://moniepoint.com/ng/careers",
+    "board_url": "https://boards.greenhouse.io/moniepoint",
+    "platform_metadata": {
+      "board_token": "moniepoint"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://moniepoint.com/ng/careers",
+      "resolved_board_url": "https://boards.greenhouse.io/moniepoint",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "offerzen-za",
+    "company": "OfferZen",
+    "ats": "greenhouse",
+    "country": "ZA",
+    "city": "Cape Town",
+    "sector": "enterprise-software",
+    "sector_raw": "hr-tech",
+    "status": "watchlist",
+    "careers_url": "https://www.offerzen.com/jobs/",
+    "board_url": "https://boards.greenhouse.io/offerzen",
+    "platform_metadata": {
+      "board_token": "offerzen"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.offerzen.com/jobs/",
+      "resolved_board_url": "https://boards.greenhouse.io/offerzen",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "alx-ke",
+    "company": "ALX",
+    "ats": "greenhouse",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "edtech",
+    "sector_raw": "edtech",
+    "status": "active",
+    "careers_url": "https://www.alxafrica.com/careers/",
+    "board_url": "https://boards.greenhouse.io/alxafrica",
+    "platform_metadata": {
+      "board_token": "alxafrica"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://www.alxafrica.com/careers/",
+      "resolved_board_url": "https://boards.greenhouse.io/alxafrica",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "id": "mkopa-ke",
+    "company": "M-KOPA",
+    "ats": "ashby",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "fintech",
+    "sector_raw": "fintech",
+    "status": "active",
+    "careers_url": "https://m-kopa.com/careers/",
+    "board_url": "https://jobs.ashbyhq.com/m-kopa",
+    "platform_metadata": {
+      "board_token": "m-kopa"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://m-kopa.com/careers/",
+      "resolved_board_url": "https://jobs.ashbyhq.com/m-kopa",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  },
+  {
+    "id": "talent-safari-ke",
+    "company": "Talent Safari",
+    "ats": "ashby",
+    "country": "KE",
+    "city": "Nairobi",
+    "sector": "enterprise-software",
+    "sector_raw": "hr-tech",
+    "status": "active",
+    "careers_url": "https://jobs.ashbyhq.com/talentsafari",
+    "board_url": "https://jobs.ashbyhq.com/talentsafari",
+    "platform_metadata": {
+      "board_token": "talentsafari"
+    },
+    "verification": {
+      "method": "manual",
+      "confidence": 0.85,
+      "first_seen_at": "2026-03-02",
+      "last_checked_at": "2026-03-02",
+      "last_status_code": 200
+    },
+    "evidence": {
+      "detected_from_url": "https://jobs.ashbyhq.com/talentsafari",
+      "resolved_board_url": "https://jobs.ashbyhq.com/talentsafari",
+      "detection_signals": [
+        "manual-entry"
+      ],
+      "notes": "Migrated from v0 seed data"
+    },
+    "source": {
+      "submitted_by": "github:seed-data",
+      "submitted_at": "2026-03-02"
+    }
+  }
+]

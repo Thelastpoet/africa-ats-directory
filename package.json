@@ -1,0 +1,33 @@
+{
+  "name": "africa-ats-directory",
+  "version": "1.0.0",
+  "description": "Community-driven directory mapping African companies to their ATS platforms",
+  "keywords": [
+    "africa",
+    "ats",
+    "jobs",
+    "kenya",
+    "directory",
+    "open-source"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "scripts": {
+    "validate": "ts-node scripts/validate.ts",
+    "detect": "ts-node scripts/detect-ats.ts",
+    "build-index": "ts-node scripts/build-index.ts",
+    "test": "vitest run",
+    "setup-hooks": "sh -c \"if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then git config core.hooksPath .githooks && echo Hooks path set to .githooks; else echo Not a git worktree here. Run this in your cloned git repo.; fi\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "ajv": "^8.0.0",
+    "ajv-formats": "^3.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.0.0",
+    "vitest": "^4.0.18"
+  }
+}
