@@ -1,0 +1,145 @@
+name: Daily Health Check
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    name: Validate board health (report-only)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run health validation (non-blocking)
+        id: health
+        continue-on-error: true
+        run: |
+          set -o pipefail
+          pnpm validate 2>&1 | tee /tmp/health-check.log
+
+      - name: Summarize health check
+        if: always()
+        id: summary
+        run: |
+          if [ ! -f /tmp/health-check.log ]; then
+            echo "## Daily Health Check" >> "$GITHUB_STEP_SUMMARY"
+            echo "- No validation log found." >> "$GITHUB_STEP_SUMMARY"
+            echo "hard_errors=0" >> "$GITHUB_OUTPUT"
+            echo "soft_warnings=0" >> "$GITHUB_OUTPUT"
+            echo "total_entries=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          summary_line="$(grep 'VALIDATION_SUMMARY' /tmp/health-check.log | tail -n 1 || true)"
+
+          if [ -z "$summary_line" ]; then
+            echo "## Daily Health Check" >> "$GITHUB_STEP_SUMMARY"
+            echo "- No summary line found in validation output." >> "$GITHUB_STEP_SUMMARY"
+            echo "hard_errors=0" >> "$GITHUB_OUTPUT"
+            echo "soft_warnings=0" >> "$GITHUB_OUTPUT"
+            echo "total_entries=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          hard_errors="$(echo "$summary_line" | sed -E 's/.*hard_errors=([0-9]+).*/\1/')"
+          soft_warnings="$(echo "$summary_line" | sed -E 's/.*soft_warnings=([0-9]+).*/\1/')"
+          total_entries="$(echo "$summary_line" | sed -E 's/.*total_entries=([0-9]+).*/\1/')"
+
+          echo "hard_errors=$hard_errors" >> "$GITHUB_OUTPUT"
+          echo "soft_warnings=$soft_warnings" >> "$GITHUB_OUTPUT"
+          echo "total_entries=$total_entries" >> "$GITHUB_OUTPUT"
+
+          echo "## Daily Health Check" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Total entries checked: $total_entries" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Hard errors: $hard_errors" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Soft warnings: $soft_warnings" >> "$GITHUB_STEP_SUMMARY"
+
+          echo "::notice title=Daily Health Check::Hard errors: $hard_errors | Soft warnings: $soft_warnings | Total entries: $total_entries"
+
+      - name: Create or update health-check issue
+        if: steps.summary.outputs.hard_errors != '0'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const hardErrors = Number('${{ steps.summary.outputs.hard_errors }}');
+            const softWarnings = Number('${{ steps.summary.outputs.soft_warnings }}');
+            const totalEntries = Number('${{ steps.summary.outputs.total_entries }}');
+            const title = 'Daily ATS Health Check: hard errors detected';
+            const labelName = 'health-check';
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const runUrl = `https://github.com/${owner}/${repo}/actions/runs/${context.runId}`;
+
+            // Ensure the tracking label exists.
+            try {
+              await github.rest.issues.getLabel({ owner, repo, name: labelName });
+            } catch (error) {
+              if (error.status === 404) {
+                await github.rest.issues.createLabel({
+                  owner,
+                  repo,
+                  name: labelName,
+                  color: 'B60205',
+                  description: 'Automated daily ATS board health check reports',
+                });
+              } else {
+                throw error;
+              }
+            }
+
+            const body = [
+              'Automated daily health check detected hard validation errors.',
+              '',
+              `- Hard errors: ${hardErrors}`,
+              `- Soft warnings: ${softWarnings}`,
+              `- Total entries checked: ${totalEntries}`,
+              `- Workflow run: ${runUrl}`,
+            ].join('\n');
+
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: labelName,
+              per_page: 100,
+            });
+
+            const existing = openIssues.find((issue) => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: existing.number,
+                body: `${new Date().toISOString()}\n\n${body}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: [labelName],
+              });
+            }
