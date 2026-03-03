@@ -82,16 +82,20 @@ Full schema: `schema/company-entry.schema.json`.
 
 ```bash
 pnpm install
+pnpm test
 pnpm validate
 pnpm build-index
 pnpm detect <careers-url>
+pnpm run setup-hooks
 ```
 
 Notes:
 
+- `pnpm test` runs the Vitest suite for `detect-ats`, `validate`, and `build-index`.
 - `pnpm validate` performs schema checks, duplicate ID checks, ATS/file coherence checks, and board activity checks.
 - Board checks classify failures as `soft-fail` (warning) or `hard-fail` (CI blocking).
 - `pnpm build-index` regenerates `companies/index.json` in metadata+entries format.
+- `pnpm run setup-hooks` enables the local pre-commit hook (`.githooks/pre-commit`) for fast local checks.
 
 ## Detect ATS
 
